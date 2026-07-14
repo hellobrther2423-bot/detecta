@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { HashRouter, Routes, Route, Navigate } from 'react-router-dom'
+import { HashRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { AuthProvider, useAuth } from './store/auth'
 import { ThemeProvider } from './store/theme'
@@ -57,10 +57,11 @@ function LanguageGate({ children }) {
 function Protected({ children }) {
   const { user, loading } = useAuth()
   const { t } = useTranslation()
+  const location = useLocation()
   if (loading) return <div className="container center muted">{t('common.loading')}</div>
   if (!user) return <Navigate to="/signin" replace />
-  // Force onboarding once after signup.
-  if (!user.onboarding_complete && window.location.pathname !== '/onboarding') {
+  // Force onboarding once after signup. Use router location (pathname is unreliable with HashRouter).
+  if (!user.onboarding_complete && location.pathname !== '/onboarding') {
     return <Navigate to="/onboarding" replace />
   }
   return children

@@ -12,6 +12,9 @@ import {
   GlobeIcon, ChatIcon, ChartIcon, ShieldIcon, AlertIcon, PinIcon, LockIcon, CheckIcon, PlusIcon, ArrowIcon,
 } from '../components/icons'
 
+// Public assets must be prefixed with the deploy base (e.g. /detecta/ on GitHub Pages).
+const heroImg = `${import.meta.env.BASE_URL}hero.jpg`
+
 export default function Landing() {
   const { t } = useTranslation()
   const [scrolled, setScrolled] = useState(false)
@@ -70,7 +73,7 @@ export default function Landing() {
       {/* Hero — full-bleed image background with animated effects */}
       <header className="lp-hero lp-hero-image">
         <div className="lp-hero-bg" style={{ opacity: heroFade, transform: `translateY(${heroShift * 0.3}px)` }}>
-          <img src="/hero.jpg" alt="" className="lp-hero-bgimg" loading="eager" />
+          <img src={heroImg} alt="" className="lp-hero-bgimg" loading="eager" />
           <div className="lp-hero-veil" />
           {/* Animated particle overlay */}
           <div className="lp-hero-particles" aria-hidden="true">
