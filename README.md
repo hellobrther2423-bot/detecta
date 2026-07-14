@@ -1,88 +1,101 @@
-# DETECTOMA
+# DETECTA
 
-A bilingual (English / العربية) lab-report screening aid. Users upload a photo or PDF of a
-lab report (blood test, tumor-marker panel, biopsy, or pathology report); DETECTOMA extracts the
-values, compares them against reference ranges, and produces a **screening risk indicator** with
-plain-language explanations in the user's language.
+**Live site · الموقع المباشر:** **https://hellobrther2423-bot.github.io/detecta/**
 
-> ⚠️ **DETECTOMA is a screening aid, not a medical diagnosis.** It cannot confirm or rule out
-> cancer or any disease. Only a qualified doctor can interpret a lab report. Always follow up with
-> a healthcare professional.
+Open the link, choose your language, sign up, and try it. No installation, no account approval — it works entirely in your browser.
+
+افتح الرابط، اختر لغتك، أنشئ حساباً، وجرّب التطبيق. بدون تثبيت وبدون موافقة — يعمل بالكامل داخل متصفحك.
 
 ---
 
-## What's real vs. placeholder (be honest with yourself)
+## English
 
-This repository is an **end-to-end working skeleton**. The full flow runs today, but several
-pieces are deliberately pluggable placeholders with clean interfaces so real implementations can
-drop in later:
+DETECTA is a bilingual (English / العربية) lab-report screening aid. You upload a photo or PDF of a lab report, DETECTA reads the tumor-marker values, compares them against normal reference ranges, and shows a plain-language **screening risk indicator** in your language, with charts and a history of your results over time.
 
-| Area | State | How to make it "real" |
-|------|-------|-----------------------|
-| Auth (email+password, JWT, reset) | **Real** | — |
-| Database + per-user isolation | **Real** (SQLite dev, Postgres-ready) | Set `DATABASE_URL` to Postgres |
-| Encrypted file storage at rest | **Real** (Fernet/AES) | Point `STORAGE_DIR` at durable disk / swap for S3 adapter |
-| Audit logging | **Real** | — |
-| Bilingual UI + full RTL mirroring | **Real** | — |
-| Localized content layer (EN/AR) | **Real** (JSON, no code changes to edit) | Edit files in `backend/app/content/` |
-| OCR / value extraction | **Mock by default**, Google/Azure adapters wired | Add `GOOGLE_VISION_*` or `AZURE_VISION_*` env vars |
-| Risk-scoring engine | **Placeholder** rules vs. reference ranges | Implement `RiskEngine` behind the same interface |
-| Email (reset codes, reminders) | **Console/mock by default** | Add SMTP env vars |
+> ⚠️ **DETECTA is a screening aid, not a medical diagnosis.** It cannot confirm or rule out cancer or any disease. Only a qualified doctor can interpret a lab report. Always follow up with a healthcare professional.
 
-The mock OCR and mock email providers **auto-activate when no API keys are present**, so you can
-run and demo the entire app with zero external accounts.
+### This is a demo
 
----
+This version runs **100% in your browser**. There is no server and no central database:
 
-## Architecture
+- Anyone can open the link, sign up, and use every feature.
+- Your account and reports are saved **only in your own browser** (via `localStorage`).
+- Nothing you enter is sent anywhere or stored on any server.
+- Because there's no backend, the value extraction (OCR) and the AI assistant replies are **simulated** for demonstration.
 
-```
-detectoma/
-├── backend/        FastAPI + SQLAlchemy (Python)
-│   └── app/
-│       ├── core/         config, database, security, audit
-│       ├── models/       SQLAlchemy ORM models
-│       ├── schemas/      Pydantic request/response models
-│       ├── services/     ocr/, risk engine, storage, email, reminders
-│       ├── content/      localized JSON (markers, education, result text)
-│       ├── api/          route handlers
-│       └── main.py       app entrypoint
-└── frontend/       Vite + React + i18next (EN/AR, RTL-aware)
-```
+### Features
 
-## Quick start
+- Bilingual English / Arabic with full right-to-left (RTL) support
+- Sign up / sign in / password reset, with a patient or doctor role
+- Upload a report → simulated extraction → review the values → risk result
+- Dashboard with charts, trends over time, and a history of reports
+- Built-in assistant that answers questions about tumor markers
+- Light and dark themes
 
-### Backend
-```bash
-cd backend
-python -m venv .venv
-# Windows PowerShell:  .venv\Scripts\Activate.ps1
-# bash:                source .venv/bin/activate
-pip install -r requirements.txt
-python -m app.seed          # optional: seed demo content
-uvicorn app.main:app --reload --port 8000
-```
-API docs: http://localhost:8000/docs
+### Run it locally (optional)
 
-### Frontend
 ```bash
 cd frontend
 npm install
 npm run dev
 ```
-App: http://localhost:5173
 
-## Configuration
+Then open http://localhost:5173
 
-Copy `backend/.env.example` to `backend/.env` and adjust. With **no** cloud keys set, the app
-runs fully on mock OCR + console email. See the table above for what each key unlocks.
+### Publish your own copy
 
-## Security & compliance posture
+```bash
+cd frontend
+npm run deploy
+```
 
-- Per-user row ownership enforced on **every** query — no cross-user access path exists.
-- Uploaded reports are **encrypted at rest**; filenames are opaque UUIDs.
-- Every access to protected health data is **audit-logged** (who, what, when, from where).
-- Users can **export all their data** and **permanently delete their account** (privacy rights).
-- Structured toward HIPAA-style handling. **Not** a certified/compliant system as-is — a real
-  deployment needs a BAA-covered host, TLS everywhere, key management (KMS), backups, and a
-  formal risk assessment. This scaffold is designed to make that path straightforward.
+This builds the app and publishes it to the `gh-pages` branch. In your repo on GitHub, go to **Settings → Pages** and set the source branch to **`gh-pages`**.
+
+---
+
+## العربية
+
+DETECTA أداة مساعدة للفحص المبكر تدعم لغتين (الإنجليزية / العربية). ترفع صورة أو ملف PDF لتقرير مختبر، فيقرأ DETECTA قيم علامات الأورام، ويقارنها بالنطاقات المرجعية الطبيعية، ثم يعرض **مؤشر خطر للفحص** بلغة مبسّطة بلغتك، مع رسوم بيانية وسجل لنتائجك عبر الوقت.
+
+> ⚠️ **DETECTA أداة مساعدة للفحص وليست تشخيصاً طبياً.** لا يمكنها تأكيد أو استبعاد السرطان أو أي مرض. الطبيب المختص وحده من يستطيع تفسير تقرير المختبر. راجع دائماً مختصاً في الرعاية الصحية.
+
+### هذه نسخة تجريبية
+
+تعمل هذه النسخة **بنسبة 100% داخل متصفحك**. لا يوجد خادم ولا قاعدة بيانات مركزية:
+
+- يمكن لأي شخص فتح الرابط وإنشاء حساب واستخدام جميع الميزات.
+- يُحفظ حسابك وتقاريرك **داخل متصفحك أنت فقط** (عبر `localStorage`).
+- لا يُرسَل أي شيء تُدخله إلى أي مكان ولا يُخزَّن على أي خادم.
+- بما أنه لا يوجد خادم، فإن استخراج القيم (OCR) وردود المساعد الذكي **محاكاة** لأغراض العرض.
+
+### الميزات
+
+- لغتان: الإنجليزية والعربية مع دعم كامل للكتابة من اليمين إلى اليسار
+- إنشاء حساب / تسجيل دخول / إعادة تعيين كلمة المرور، مع اختيار دور مريض أو طبيب
+- رفع تقرير ← استخراج محاكى ← مراجعة القيم ← نتيجة الخطر
+- لوحة تحكم فيها رسوم بيانية واتجاهات عبر الوقت وسجل للتقارير
+- مساعد مدمج يجيب عن الأسئلة حول علامات الأورام
+- وضع فاتح ووضع داكن
+
+### تشغيله محلياً (اختياري)
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+ثم افتح http://localhost:5173
+
+### نشر نسختك الخاصة
+
+```bash
+cd frontend
+npm run deploy
+```
+
+يبني هذا الأمر التطبيق وينشره على فرع `gh-pages`. من صفحة المستودع على GitHub، اذهب إلى **Settings → Pages** واضبط مصدر النشر على فرع **`gh-pages`**.
+
+---
+
+Built with React + Vite + i18next.
