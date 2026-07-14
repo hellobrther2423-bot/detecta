@@ -1,0 +1,115 @@
+{
+  "_comment": "DETECTOMA marker catalog. Reference ranges are GENERIC screening placeholders for demo purposes and are NOT clinical thresholds. Real deployment must use lab-specific, validated reference intervals. Explanations are authored natively in EN and AR (not machine-translated).",
+  "markers": {
+    "cea": {
+      "aliases": ["cea", "carcinoembryonic antigen", "المستضد السرطاني المضغي", "مولد الضد السرطاني المضغي"],
+      "unit": "ng/mL",
+      "reference_low": 0.0,
+      "reference_high": 3.0,
+      "high_threshold": 10.0,
+      "name": { "en": "CEA (Carcinoembryonic Antigen)", "ar": "المستضد السرطاني المضغي (CEA)" },
+      "explanation": {
+        "normal": {
+          "en": "Your CEA reading is within the usual reference range. CEA is a general marker sometimes linked to certain cancers, but many everyday factors (like smoking) can also raise it.",
+          "ar": "قراءة CEA لديك ضمن النطاق المرجعي المعتاد. يُعد CEA مؤشرًا عامًا يرتبط أحيانًا ببعض أنواع السرطان، لكن عوامل يومية كثيرة (مثل التدخين) قد ترفعه أيضًا."
+        },
+        "elevated": {
+          "en": "Your CEA reading is slightly above the usual range. This is common and often not serious, but it is worth mentioning to a doctor, who may suggest repeating the test.",
+          "ar": "قراءة CEA لديك أعلى قليلًا من النطاق المعتاد. هذا شائع وغالبًا غير خطير، لكن يُستحسن ذكره للطبيب الذي قد يقترح إعادة الفحص."
+        },
+        "high": {
+          "en": "Your CEA reading is notably above the usual range. This does not confirm anything on its own, but a doctor should review it to decide on any follow-up.",
+          "ar": "قراءة CEA لديك أعلى بوضوح من النطاق المعتاد. هذا لا يؤكد شيئًا بحد ذاته، لكن ينبغي أن يراجعه الطبيب لتحديد أي متابعة لازمة."
+        }
+      }
+    },
+    "ca125": {
+      "aliases": ["ca125", "ca-125", "ca 125", "cancer antigen 125", "المستضد السرطاني 125"],
+      "unit": "U/mL",
+      "reference_low": 0.0,
+      "reference_high": 35.0,
+      "high_threshold": 200.0,
+      "name": { "en": "CA-125", "ar": "المستضد السرطاني 125 (CA-125)" },
+      "explanation": {
+        "normal": {
+          "en": "Your CA-125 reading is within the usual reference range. CA-125 is sometimes used to monitor ovarian health, but it can vary for many benign reasons.",
+          "ar": "قراءة CA-125 لديك ضمن النطاق المرجعي المعتاد. يُستخدم CA-125 أحيانًا لمتابعة صحة المبيض، لكنه قد يتغير لأسباب حميدة عديدة."
+        },
+        "elevated": {
+          "en": "Your CA-125 is a little above the usual range. Many non-cancer conditions can raise it. A doctor can help interpret it in context.",
+          "ar": "قراءة CA-125 لديك أعلى قليلًا من النطاق المعتاد. حالات كثيرة غير سرطانية قد ترفعها. يمكن للطبيب المساعدة في تفسيرها ضمن سياقها."
+        },
+        "high": {
+          "en": "Your CA-125 is notably elevated. This warrants a conversation with a doctor, who may recommend further checks.",
+          "ar": "قراءة CA-125 لديك مرتفعة بوضوح. يستدعي هذا التحدث مع طبيب قد يوصي بفحوصات إضافية."
+        }
+      }
+    },
+    "psa": {
+      "aliases": ["psa", "prostate specific antigen", "prostate-specific antigen", "المستضد البروستاتي النوعي"],
+      "unit": "ng/mL",
+      "reference_low": 0.0,
+      "reference_high": 4.0,
+      "high_threshold": 10.0,
+      "name": { "en": "PSA (Prostate-Specific Antigen)", "ar": "المستضد البروستاتي النوعي (PSA)" },
+      "explanation": {
+        "normal": {
+          "en": "Your PSA reading is within the usual reference range for screening purposes.",
+          "ar": "قراءة PSA لديك ضمن النطاق المرجعي المعتاد لأغراض الفحص."
+        },
+        "elevated": {
+          "en": "Your PSA is mildly elevated. PSA rises with age and with benign prostate conditions too. A doctor can advise whether to repeat it.",
+          "ar": "قراءة PSA لديك مرتفعة قليلًا. يرتفع PSA مع التقدم في العمر ومع حالات بروستاتا حميدة أيضًا. يمكن للطبيب أن ينصح بإعادته."
+        },
+        "high": {
+          "en": "Your PSA is notably elevated. Please share this result with a doctor to decide on next steps.",
+          "ar": "قراءة PSA لديك مرتفعة بوضوح. يُرجى مشاركة هذه النتيجة مع طبيب لتحديد الخطوات التالية."
+        }
+      }
+    },
+    "afp": {
+      "aliases": ["afp", "alpha fetoprotein", "alpha-fetoprotein", "البروتين الجنيني ألفا"],
+      "unit": "ng/mL",
+      "reference_low": 0.0,
+      "reference_high": 10.0,
+      "high_threshold": 100.0,
+      "name": { "en": "AFP (Alpha-Fetoprotein)", "ar": "البروتين الجنيني ألفا (AFP)" },
+      "explanation": {
+        "normal": {
+          "en": "Your AFP reading is within the usual reference range.",
+          "ar": "قراءة AFP لديك ضمن النطاق المرجعي المعتاد."
+        },
+        "elevated": {
+          "en": "Your AFP is slightly above the usual range. Several liver-related and benign factors can affect it. A doctor can interpret it.",
+          "ar": "قراءة AFP لديك أعلى قليلًا من النطاق المعتاد. عوامل عدة متعلقة بالكبد وحميدة قد تؤثر فيها. يمكن للطبيب تفسيرها."
+        },
+        "high": {
+          "en": "Your AFP is notably elevated and should be reviewed by a doctor.",
+          "ar": "قراءة AFP لديك مرتفعة بوضوح وينبغي أن يراجعها طبيب."
+        }
+      }
+    },
+    "ca19_9": {
+      "aliases": ["ca19-9", "ca 19-9", "ca19_9", "cancer antigen 19-9", "المستضد السرطاني 19-9"],
+      "unit": "U/mL",
+      "reference_low": 0.0,
+      "reference_high": 37.0,
+      "high_threshold": 100.0,
+      "name": { "en": "CA 19-9", "ar": "المستضد السرطاني 19-9 (CA 19-9)" },
+      "explanation": {
+        "normal": {
+          "en": "Your CA 19-9 reading is within the usual reference range.",
+          "ar": "قراءة CA 19-9 لديك ضمن النطاق المرجعي المعتاد."
+        },
+        "elevated": {
+          "en": "Your CA 19-9 is a little above the usual range. Benign digestive conditions can raise it. A doctor can help interpret it.",
+          "ar": "قراءة CA 19-9 لديك أعلى قليلًا من النطاق المعتاد. حالات هضمية حميدة قد ترفعها. يمكن للطبيب المساعدة في تفسيرها."
+        },
+        "high": {
+          "en": "Your CA 19-9 is notably elevated and should be reviewed by a doctor.",
+          "ar": "قراءة CA 19-9 لديك مرتفعة بوضوح وينبغي أن يراجعها طبيب."
+        }
+      }
+    }
+  }
+}

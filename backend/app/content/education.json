@@ -1,0 +1,29 @@
+{
+  "_comment": "Education / Resources content, authored natively in EN and AR.",
+  "articles": [
+    {
+      "id": "what-are-tumor-markers",
+      "title": { "en": "What are tumor markers?", "ar": "ما هي مؤشرات الأورام؟" },
+      "body": {
+        "en": "Tumor markers are substances — often proteins — that can be found in blood, urine, or tissue. Some can be higher when certain cancers are present, but they can also rise for harmless reasons. Because of this, they are used as one clue among many, never as a diagnosis on their own.",
+        "ar": "مؤشرات الأورام هي مواد — غالبًا بروتينات — يمكن العثور عليها في الدم أو البول أو الأنسجة. قد يرتفع بعضها عند وجود أنواع معينة من السرطان، لكنها قد ترتفع أيضًا لأسباب غير ضارة. لهذا تُستخدم كدليل واحد بين أدلة كثيرة، وليست تشخيصًا بحد ذاتها."
+      }
+    },
+    {
+      "id": "reference-ranges",
+      "title": { "en": "Understanding reference ranges", "ar": "فهم النطاقات المرجعية" },
+      "body": {
+        "en": "A reference range is the span of values considered typical for most healthy people. Labs may use slightly different ranges depending on their equipment and the population they serve. A value just outside the range is not automatically a problem — context matters, which is why a doctor's interpretation is essential.",
+        "ar": "النطاق المرجعي هو مجال القيم الذي يُعتبر معتادًا لدى معظم الأصحاء. قد تستخدم المختبرات نطاقات مختلفة قليلًا حسب أجهزتها والفئة التي تخدمها. القيمة الخارجة قليلًا عن النطاق ليست بالضرورة مشكلة — السياق مهم، ولهذا يُعد تفسير الطبيب ضروريًا."
+      }
+    },
+    {
+      "id": "when-to-see-doctor",
+      "title": { "en": "When should I see a doctor?", "ar": "متى ينبغي أن أراجع الطبيب؟" },
+      "body": {
+        "en": "If DETECTOMA flags a result as 'Worth Monitoring' or 'Recommend Follow-Up', bring your report to a doctor. Also see a doctor for any persistent symptoms, regardless of what any screening tool says. Early conversations are always worthwhile.",
+        "ar": "إذا صنّف ديتكتوما نتيجة على أنها «تستحق المتابعة» أو «يُنصح بالمتابعة»، فاعرض تقريرك على طبيب. راجع الطبيب أيضًا عند وجود أي أعراض مستمرة، بغض النظر عمّا تقوله أي أداة فحص. المبادرة بالحديث المبكر مفيدة دائمًا."
+      }
+    }
+  ]
+}

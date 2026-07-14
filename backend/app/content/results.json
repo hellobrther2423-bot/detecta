@@ -1,0 +1,30 @@
+{
+  "_comment": "Overall result-level explanation text, authored natively in EN and AR. Editable without code changes.",
+  "levels": {
+    "normal": {
+      "title": { "en": "Normal Range", "ar": "ضمن النطاق الطبيعي" },
+      "summary": {
+        "en": "None of the markers we read fell outside their usual reference ranges. That is reassuring, but this screening cannot rule anything out. Keep up with your regular check-ups.",
+        "ar": "لم تخرج أي من المؤشرات التي قرأناها عن نطاقاتها المرجعية المعتادة. هذا مطمئن، لكن هذا الفحص لا يمكنه استبعاد أي شيء. واظب على فحوصاتك الدورية."
+      }
+    },
+    "monitor": {
+      "title": { "en": "Worth Monitoring", "ar": "يستحق المتابعة" },
+      "summary": {
+        "en": "One or more markers were slightly outside the usual range. This is common and often harmless, but it is a good idea to keep an eye on it and mention it at your next visit.",
+        "ar": "خرج مؤشر واحد أو أكثر قليلًا عن النطاق المعتاد. هذا شائع وغالبًا غير ضار، لكن من الجيد متابعته وذكره في زيارتك القادمة."
+      }
+    },
+    "follow_up": {
+      "title": { "en": "Recommend Follow-Up", "ar": "يُنصح بالمتابعة" },
+      "summary": {
+        "en": "One or more markers were notably outside the usual range. This does not mean you have cancer — many other things can cause this. Please share these results with a doctor so they can advise you.",
+        "ar": "خرج مؤشر واحد أو أكثر بوضوح عن النطاق المعتاد. هذا لا يعني إصابتك بالسرطان — أمور كثيرة أخرى قد تسبب ذلك. يُرجى مشاركة هذه النتائج مع طبيب ليقدّم لك النصيحة."
+      }
+    }
+  },
+  "disclaimer": {
+    "en": "DETECTOMA is a screening aid, not a medical diagnosis. It cannot confirm or rule out any disease. Only a qualified doctor can interpret your results.",
+    "ar": "ديتكتوما أداة فحص أولي، وليست تشخيصًا طبيًا. لا يمكنها تأكيد أو استبعاد أي مرض. الطبيب المؤهل وحده من يمكنه تفسير نتائجك."
+  }
+}

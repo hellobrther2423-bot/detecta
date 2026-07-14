@@ -1,0 +1,21 @@
+# --- Core ---
+fastapi>=0.115
+uvicorn[standard]>=0.30
+sqlalchemy>=2.0
+pydantic>=2.7
+pydantic-settings>=2.2
+python-multipart>=0.0.9
+
+# --- Auth & crypto ---
+passlib[bcrypt]>=1.7
+bcrypt<4.1
+pyjwt>=2.8
+cryptography>=42
+email-validator>=2.1
+
+# --- Optional cloud OCR (only needed if you enable real providers) ---
+# google-cloud-vision>=3.7
+# azure-cognitiveservices-vision-computervision>=0.9
+
+# --- Postgres driver (only needed when DATABASE_URL points at Postgres) ---
+psycopg[binary]>=3.1

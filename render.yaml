@@ -1,0 +1,31 @@
+# Render Blueprint — deploys the DETECTA backend (FastAPI) + a free Postgres DB.
+# In Render: New → Blueprint → connect this repo. It reads this file automatically.
+services:
+  - type: web
+    name: detecta-api
+    runtime: python
+    rootDir: backend
+    plan: free
+    buildCommand: "pip install -r requirements.txt psycopg[binary]"
+    startCommand: "uvicorn app.main:app --host 0.0.0.0 --port $PORT"
+    healthCheckPath: /api/health
+    envVars:
+      - key: ENVIRONMENT
+        value: production
+      - key: SECRET_KEY
+        generateValue: true          # Render generates a strong random key
+      - key: DATABASE_URL
+        fromDatabase:
+          name: detecta-db
+          property: connectionString
+      - key: CORS_ORIGINS
+        sync: false                  # set to your Vercel URL after the frontend deploys
+      # Optional — add later to enable the real chatbot:
+      # - key: ANTHROPIC_API_KEY
+      #   sync: false
+      # - key: OPENAI_API_KEY
+      #   sync: false
+
+databases:
+  - name: detecta-db
+    plan: free
